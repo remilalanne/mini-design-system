@@ -1,0 +1,13 @@
+:root {
+	--font-family-base: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial,
+		sans-serif;
+	--font-size-xs: 0.75rem;
+	--font-size-sm: 0.875rem;
+	--font-size-md: 1rem;
+	--font-size-lg: 1.25rem;
+	--font-size-xl: 1.5rem;
+	--font-weight-normal: 400;
+	--font-weight-semibold: 600;
+	--font-weight-bold: 700;
+	--line-height-base: 1.5;
+}

@@ -1,0 +1,99 @@
+.button {
+	font-family: var(--font-family-base);
+	background-color: var(--color-primary);
+	color: var(--color-background);
+	border-width: 1px;
+	border-style: solid;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+
+	&--outlined {
+		background-color: transparent;
+	}
+
+	&--text {
+		background-color: transparent;
+		border: none;
+	}
+
+	/* === Colors === */
+	&--primary {
+		--btn-bg: var(--color-primary);
+		--btn-color-hover: var(--color-primary-hover);
+		--btn-border: var(--color-primary);
+		--btn-text: var(--color-text-white);
+	}
+
+	&--secondary {
+		--btn-bg: var(--color-secondary);
+		--btn-color-hover: var(--color-secondary-hover);
+		--btn-border: var(--color-secondary);
+		--btn-text: var(--color-text-white);
+	}
+
+	/* === Combine variants and colors === */
+	&--contained {
+		background-color: var(--btn-bg);
+		color: var(--btn-text);
+		border-color: var(--btn-border);
+
+		&:hover {
+			box-shadow: var(--shadow-default);
+			background-color: var(--btn-color-hover);
+			border-color: var(--btn-color-hover);
+		}
+	}
+
+	&--outlined {
+		color: var(--btn-border);
+		border-color: var(--btn-border);
+
+		&:hover {
+			box-shadow: var(--shadow-default);
+			border-color: var(--btn-color-hover);
+			color: var(--btn-color-hover);
+		}
+	}
+
+	&--text {
+		color: var(--btn-border);
+
+		&:hover {
+			background-color: rgba(0, 0, 0, 0.05);
+			box-shadow: var(--shadow-default);
+			color: var(--btn-color-hover);
+		}
+	}
+
+	&--sm {
+		font-size: var(--font-size-sm);
+		padding: var(--spacing-2) var(--spacing-3);
+	}
+	&--md {
+		font-size: var(--font-size-md);
+		padding: var(--spacing-2) var(--spacing-4);
+	}
+	&--lg {
+		font-size: var(--font-size-lg);
+		padding: var(--spacing-2) var(--spacing-4);
+	}
+
+	&--radius-sm {
+		border-radius: var(--radius-sm);
+	}
+	&--radius-md {
+		border-radius: var(--radius-md);
+	}
+	&--radius-lg {
+		border-radius: var(--radius-lg);
+	}
+	&--radius-rounded {
+		border-radius: var(--radius-round);
+	}
+
+	/* === Disabled state (optional) === */
+	&:disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
+	}
+}
