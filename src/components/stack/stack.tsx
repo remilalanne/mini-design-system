@@ -5,7 +5,7 @@ import type {
 	FlexWrapValues,
 	JustifyContentValues,
 } from '../../types/stackTypes';
-import styles from './stack.module.css';
+import styles from './stack.module.scss';
 
 export type StackProps = {
 	alignItems?: AlignItemsValues;
