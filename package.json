@@ -13,6 +13,7 @@
 		"preview": "vite preview",
 		"storybook": "storybook dev -p 6006",
 		"test": "vitest run --coverage",
+		"test:watch": "vitest --coverage",
 		"build-storybook": "storybook build"
 	},
 	"dependencies": {
@@ -29,6 +30,7 @@
 		"@storybook/react-vite": "^10.0.5",
 		"@testing-library/jest-dom": "^6.9.1",
 		"@testing-library/react": "^16.3.0",
+		"@testing-library/user-event": "^14.6.1",
 		"@types/node": "^24.6.0",
 		"@types/react": "^19.1.16",
 		"@types/react-dom": "^19.1.9",

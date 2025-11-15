@@ -19,14 +19,14 @@ export type StackProps = {
 };
 
 export function Stack({
-	alignItems,
+	alignItems = 'start',
 	children,
 	dataTestId,
-	direction,
-	flexGrow,
-	flexShrink,
-	flexWrap,
-	justifyContent,
+	direction = 'row',
+	flexGrow = 0,
+	flexShrink = 1,
+	flexWrap = 'nowrap',
+	justifyContent = 'start',
 }: StackProps) {
 	return (
 		<div

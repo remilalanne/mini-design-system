@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { ArgTypes, Meta, StoryObj } from '@storybook/react-vite';
 import { Button, type ButtonProps } from './button';
 
 const meta: Meta<typeof Button> = {
@@ -19,10 +19,18 @@ const defaultArgs: ButtonProps = {
 	variant: 'contained',
 };
 
+const argTypes: Partial<ArgTypes<ButtonProps>> = {
+	borderRadius: {
+		control: { type: 'radio' },
+		options: ['sm', 'md', 'lg', 'rounded'],
+	},
+};
+
 export const Contained: Story = {
 	args: {
 		...defaultArgs,
 	},
+	argTypes,
 };
 
 export const Outlined: Story = {
@@ -30,6 +38,7 @@ export const Outlined: Story = {
 		...defaultArgs,
 		variant: 'outlined',
 	},
+	argTypes,
 };
 
 export const Text: Story = {
@@ -37,4 +46,5 @@ export const Text: Story = {
 		...defaultArgs,
 		variant: 'text',
 	},
+	argTypes,
 };
