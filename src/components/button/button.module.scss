@@ -31,6 +31,20 @@
 		--btn-text: var(--color-text-white);
 	}
 
+	&--success {
+		--btn-bg: var(--color-success);
+		--btn-color-hover: var(--color-success-hover);
+		--btn-border: var(--color-success);
+		--btn-text: var(--color-text-white);
+	}
+
+	&--warning {
+		--btn-bg: var(--color-warning);
+		--btn-color-hover: var(--color-warning-hover);
+		--btn-border: var(--color-warning);
+		--btn-text: var(--color-text-white);
+	}
+
 	/* === Combine variants and colors === */
 	&--contained {
 		background-color: var(--btn-bg);

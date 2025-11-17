@@ -21,8 +21,12 @@ const defaultArgs: ButtonProps = {
 
 const argTypes: Partial<ArgTypes<ButtonProps>> = {
 	borderRadius: {
-		control: { type: 'radio' },
+		control: { type: 'select' },
 		options: ['sm', 'md', 'lg', 'rounded'],
+	},
+	color: {
+		control: { type: 'select' },
+		options: ['primary', 'secondary', 'success', 'warning'],
 	},
 };
 

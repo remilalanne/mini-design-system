@@ -24,7 +24,7 @@ describe('Button', () => {
 		render(
 			<Button
 				variant="outlined"
-				color="secondary"
+				color="success"
 				borderRadius="lg"
 				size="sm"
 				dataTestId="btn"
@@ -37,9 +37,21 @@ describe('Button', () => {
 
 		expect(btn).toHaveClass(classes.button);
 		expect(btn).toHaveClass(classes['button--outlined']);
-		expect(btn).toHaveClass(classes['button--secondary']);
+		expect(btn).toHaveClass(classes['button--success']);
 		expect(btn).toHaveClass(classes['button--radius-lg']);
 		expect(btn).toHaveClass(classes['button--sm']);
+	});
+
+	it('supports warning color', () => {
+		render(
+			<Button variant="contained" color="warning" dataTestId="warn-btn">
+				Warn
+			</Button>
+		);
+
+		const btn = screen.getByTestId('warn-btn');
+
+		expect(btn).toHaveClass(classes['button--warning']);
 	});
 
 	it('fires onClick when clicked', async () => {
