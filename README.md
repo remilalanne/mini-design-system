@@ -61,6 +61,8 @@ This project showcases experience with:
 
 -   **Button**
 -   **Stack**
+-   **Box**
+-   **Grid**
 -   _More components coming soon…_
 
 ---
