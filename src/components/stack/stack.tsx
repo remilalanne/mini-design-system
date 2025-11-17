@@ -4,7 +4,7 @@ import type {
 	AlignItemsValues,
 	FlexWrapValues,
 	JustifyContentValues,
-} from '../../types/stackTypes';
+} from '../../types/stack';
 import styles from './stack.module.scss';
 
 export type StackProps = {

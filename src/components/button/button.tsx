@@ -5,7 +5,7 @@ import type {
 	ButtonSizes,
 	ButtonVariants,
 	RadiusType,
-} from '../../types/buttonTypes';
+} from '../../types/button';
 import styles from './button.module.scss';
 
 export type ButtonProps = {

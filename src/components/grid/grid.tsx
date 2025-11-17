@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import type { CSSProperties, ReactNode } from 'react';
-import styles from './grid.module.scss';
+import classes from './grid.module.scss';
 
 export type GridProps = {
 	children: ReactNode;
@@ -27,7 +27,7 @@ export function Grid({
 
 	return (
 		<div
-			className={classNames(styles.grid, className)}
+			className={classNames(classes.grid, className)}
 			style={gridStyle}
 			data-testid={dataTestId}
 		>
