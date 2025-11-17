@@ -1,8 +1,14 @@
 :root {
 	--color-primary: #007bff;
 	--color-primary-hover: #258cf9;
+	--color-primary-surface: #e8f1ff;
 	--color-secondary: #6c757d;
 	--color-secondary-hover: #5d6164;
+	--color-secondary-surface: #f4f5f6;
+	--color-success: #2e7d32;
+	--color-success-surface: #e7f4e8;
+	--color-warning: #f59f00;
+	--color-warning-surface: #fff4e0;
 	--color-background: #ffffff;
 	--color-surface: #f7f7f7;
 	--color-text: #1a1a1a;
