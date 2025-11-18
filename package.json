@@ -7,14 +7,11 @@
 		"pnpm": "10.17.1"
 	},
 	"scripts": {
-		"dev": "vite",
-		"build": "tsc -b && vite build",
 		"lint": "eslint .",
-		"preview": "vite preview",
 		"storybook": "storybook dev -p 6006",
+		"build-storybook": "storybook build",
 		"test": "vitest run --coverage",
-		"test:watch": "vitest --coverage",
-		"build-storybook": "storybook build"
+		"test:watch": "vitest --coverage"
 	},
 	"dependencies": {
 		"react": "^19.1.1",

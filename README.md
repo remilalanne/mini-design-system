@@ -82,12 +82,6 @@ cd mini-design-system
 npm install
 ```
 
-### **Start development server**
-
-```bash
-npm run dev
-```
-
 ### **Run Storybook**
 
 ```bash
@@ -126,11 +120,6 @@ This design system was created to:
 -   Build a reusable foundation for future applications
 
 ---
-
-## 🤝 Contributions
-
-This project is primarily for learning and experimentation, but feedback and suggestions are welcome.
-Feel free to open an issue or submit a pull request.
 
 ## 📄 License
 
