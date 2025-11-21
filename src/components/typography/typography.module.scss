@@ -80,6 +80,26 @@
 		font-weight: var(--font-weight-bold);
 	}
 
+	&--size-xs {
+		font-size: var(--font-size-xs);
+	}
+
+	&--size-sm {
+		font-size: var(--font-size-sm);
+	}
+
+	&--size-md {
+		font-size: var(--font-size-md);
+	}
+
+	&--size-lg {
+		font-size: var(--font-size-lg);
+	}
+
+	&--size-xl {
+		font-size: var(--font-size-xl);
+	}
+
 	&--gutter-bottom {
 		margin-bottom: var(--spacing-3);
 	}

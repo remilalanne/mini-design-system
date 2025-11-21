@@ -1,3 +1,4 @@
+import type { MainSizes } from './sizes';
 export type TypographyVariant =
 	| 'h1'
 	| 'h2'
@@ -10,3 +11,4 @@ export type TypographyVariant =
 
 export type TypographyAlign = 'left' | 'center' | 'right' | 'justify';
 export type TypographyWeight = 'normal' | 'semibold' | 'bold';
+export type TypographySize = MainSizes | 'xs' | 'xl';

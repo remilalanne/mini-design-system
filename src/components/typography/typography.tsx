@@ -2,6 +2,7 @@ import classnames from 'classnames';
 import type { JSX, ReactNode } from 'react';
 import type {
 	TypographyAlign,
+	TypographySize,
 	TypographyVariant,
 	TypographyWeight,
 } from '../../types/typography';
@@ -32,6 +33,7 @@ export type TypographyProps<T = 'p'> = {
 	noWrap?: boolean;
 	variant?: TypographyVariant;
 	weight?: TypographyWeight;
+	fontSize?: TypographySize;
 };
 
 export function Typography<T extends keyof JSX.IntrinsicElements = 'p'>({
@@ -44,7 +46,8 @@ export function Typography<T extends keyof JSX.IntrinsicElements = 'p'>({
 	gutterBottom = false,
 	noWrap = false,
 	variant = 'body',
-	weight = 'normal',
+	weight,
+	fontSize,
 }: TypographyProps<T>) {
 	const Component = component ?? defaultElementByVariant[variant];
 
@@ -54,8 +57,10 @@ export function Typography<T extends keyof JSX.IntrinsicElements = 'p'>({
 				styles.typography,
 				styles[`typography--${variant}`],
 				styles[`typography--align-${align}`],
-				styles[`typography--weight-${weight}`],
+
 				{
+					[styles[`typography--weight-${weight}`]]: weight,
+					[styles[`typography--size-${fontSize}`]]: fontSize,
 					[styles['typography--gutter-bottom']]: gutterBottom,
 					[styles['typography--no-wrap']]: noWrap,
 				},

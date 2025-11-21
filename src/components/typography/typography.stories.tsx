@@ -10,6 +10,7 @@ const meta: Meta<typeof Typography> = {
 		variant: 'body',
 		align: 'left',
 		weight: 'normal',
+		fontSize: 'md',
 	},
 	argTypes: {
 		variant: {
@@ -27,6 +28,10 @@ const meta: Meta<typeof Typography> = {
 		component: {
 			control: 'select',
 			options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span'],
+		},
+		fontSize: {
+			control: 'select',
+			options: ['xs', 'sm', 'md', 'lg', 'xl'],
 		},
 	},
 };
