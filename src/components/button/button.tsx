@@ -10,7 +10,7 @@ import styles from './button.module.scss';
 
 export type ButtonProps = {
 	children: ReactNode;
-	onClick?: (event?: React.MouseEvent<HTMLButtonElement>) => void;
+	onClick?: () => void;
 	variant?: ButtonVariants;
 	color?: ButtonColors;
 	borderRadius?: RadiusType;
