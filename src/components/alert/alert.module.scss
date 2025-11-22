@@ -1,0 +1,37 @@
+.alert {
+	display: flex;
+	justify-content: space-between;
+	gap: var(--spacing-2);
+	padding: var(--spacing-3);
+	border-radius: var(--radius-md);
+	border: 1px solid transparent;
+	font-size: var(--font-size-md);
+}
+
+.alert--info {
+	background-color: var(--color-primary-surface);
+	border-color: var(--color-primary);
+}
+
+.alert--success {
+	background-color: var(--color-success-surface);
+	border-color: var(--color-success);
+}
+
+.alert--warning {
+	background-color: var(--color-warning-surface);
+	border-color: var(--color-warning);
+}
+
+.alert--error {
+	background-color: #ffe5e5;
+	border-color: #d64545;
+}
+
+.alert__close {
+	background: none;
+	border: none;
+	font-size: 20px;
+	cursor: pointer;
+	align-self: flex-start;
+}
