@@ -1,0 +1,42 @@
+.divider {
+	background-color: transparent;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	color: var(--color-text-muted);
+}
+
+.divider--horizontal::before,
+.divider--horizontal::after {
+	content: '';
+	flex: 1;
+	height: 1px;
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.divider--vertical {
+	width: 1px;
+	background-color: rgba(0, 0, 0, 0.15);
+}
+
+.divider--dashed::before,
+.divider--dashed::after {
+	background-image: linear-gradient(
+		to right,
+		var(--color-border) 50%,
+		transparent 0
+	);
+	background-size: 6px 1px;
+}
+
+.divider__label {
+	padding: 0 var(--spacing-2);
+}
+
+.divider--align-start::before {
+	flex: 0;
+}
+
+.divider--align-end::after {
+	flex: 0;
+}
