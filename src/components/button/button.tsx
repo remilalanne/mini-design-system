@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import { type ReactNode } from 'react';
+import { type ButtonHTMLAttributes, type ReactNode } from 'react';
 import type {
 	ButtonColors,
 	ButtonSizes,
@@ -30,7 +30,8 @@ export function Button({
 	size = 'md',
 	dataTestId,
 	className,
-}: ButtonProps) {
+	...rest
+}: ButtonProps & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type'>) {
 	return (
 		<button
 			className={classnames(
@@ -44,6 +45,7 @@ export function Button({
 			onClick={onClick}
 			disabled={disabled}
 			data-testid={dataTestId}
+			{...rest}
 		>
 			{children}
 		</button>

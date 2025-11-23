@@ -1,0 +1,18 @@
+.pagination {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-2);
+}
+
+.pagination__list {
+	list-style: none;
+	display: flex;
+	gap: var(--spacing-1);
+	margin: 0;
+	padding: 0;
+}
+
+.pagination__ellipsis {
+	padding: var(--spacing-1) var(--spacing-2);
+	color: var(--color-text-subtle, inherit);
+}
