@@ -28,6 +28,10 @@ const argTypes: Partial<ArgTypes<ButtonProps>> = {
 		control: { type: 'select' },
 		options: ['primary', 'secondary', 'success', 'warning'],
 	},
+	size: {
+		control: 'select',
+		options: ['xs', 'sm', 'md', 'lg'],
+	},
 };
 
 export const Contained: Story = {
