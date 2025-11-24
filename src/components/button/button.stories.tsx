@@ -1,4 +1,5 @@
 import type { ArgTypes, Meta, StoryObj } from '@storybook/react-vite';
+import { Colors } from '../../types/colors';
 import { Button, type ButtonProps } from './button';
 
 const meta: Meta<typeof Button> = {
@@ -13,7 +14,7 @@ type Story = StoryObj<typeof Button>;
 const defaultArgs: ButtonProps = {
 	children: 'Click Me',
 	borderRadius: 'md',
-	color: 'primary',
+	color: Colors.Primary,
 	onClick: () => {},
 	size: 'md',
 	variant: 'contained',
@@ -26,7 +27,12 @@ const argTypes: Partial<ArgTypes<ButtonProps>> = {
 	},
 	color: {
 		control: { type: 'select' },
-		options: ['primary', 'secondary', 'success', 'warning'],
+		options: [
+			Colors.Primary,
+			Colors.Secondary,
+			Colors.Success,
+			Colors.Warning,
+		],
 	},
 	size: {
 		control: 'select',

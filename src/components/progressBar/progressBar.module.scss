@@ -1,0 +1,65 @@
+.progressBarWrapper {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-2);
+}
+
+.progressBar {
+	flex: 1;
+	background-color: var(--color-surface);
+	border-radius: var(--radius-round);
+	height: 8px;
+	overflow: hidden;
+}
+
+.progressBar__fill {
+	height: 100%;
+	transition: width 0.2s ease;
+	border-radius: var(--radius-round);
+	&--primary {
+		background-color: var(--color-primary);
+	}
+	&--secondary {
+		background-color: var(--color-secondary);
+	}
+	&--success {
+		background-color: var(--color-success);
+	}
+	&--warning {
+		background-color: var(--color-warning);
+	}
+}
+
+.progressCircle {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.progressCircle__track {
+	stroke: var(--color-surface);
+}
+
+.progressCircle__indicator {
+	transform-origin: center;
+	transform: rotate(-90deg);
+	transition: stroke-dashoffset 0.2s ease;
+
+	&--primary {
+		stroke: var(--color-primary);
+	}
+	&--secondary {
+		stroke: var(--color-secondary);
+	}
+	&--success {
+		stroke: var(--color-success);
+	}
+	&--warning {
+		stroke: var(--color-warning);
+	}
+}
+
+.progressCircle__value {
+	position: absolute;
+}

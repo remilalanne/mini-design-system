@@ -1,11 +1,11 @@
 import classnames from 'classnames';
 import { type ButtonHTMLAttributes, type ReactNode } from 'react';
 import type {
-	ButtonColors,
 	ButtonSizes,
 	ButtonVariants,
 	RadiusType,
 } from '../../types/button';
+import { Colors } from '../../types/colors';
 import styles from './button.module.scss';
 
 export type ButtonProps = {
@@ -13,7 +13,7 @@ export type ButtonProps = {
 	disabled?: boolean;
 	onClick?: () => void;
 	variant?: ButtonVariants;
-	color?: ButtonColors;
+	color?: Colors;
 	borderRadius?: RadiusType;
 	size?: ButtonSizes;
 	dataTestId?: string;
@@ -25,7 +25,7 @@ export function Button({
 	disabled,
 	onClick,
 	variant = 'contained',
-	color = 'primary',
+	color = Colors.Primary,
 	borderRadius = 'md',
 	size = 'md',
 	dataTestId,
