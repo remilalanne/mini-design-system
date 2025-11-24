@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Divider, type DividerProps } from './divider';
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Divider, type DividerProps } from "./divider";
 
 const meta: Meta<typeof Divider> = {
-	title: 'Layout/Divider',
+	title: "Layout/Divider",
 	component: Divider,
-	tags: ['autodocs'],
+	tags: ["autodocs"],
 };
 
 export default meta;
@@ -12,10 +12,9 @@ export default meta;
 type Story = StoryObj<typeof Divider>;
 
 const defaultArgs: DividerProps = {
-	label: 'Divider',
-	orientation: 'horizontal',
-	align: 'center',
-	variant: 'solid',
+	orientation: "horizontal",
+	align: "center",
+	variant: "solid",
 };
 
 export const Horizontal: Story = {
@@ -25,16 +24,16 @@ export const Horizontal: Story = {
 export const Vertical: Story = {
 	args: {
 		...defaultArgs,
-		orientation: 'vertical',
+		orientation: "vertical",
 		label: undefined,
-		length: '80px',
+		length: "80px",
 	},
 };
 
 export const Dashed: Story = {
 	args: {
 		...defaultArgs,
-		variant: 'dashed',
-		label: 'With label',
+		variant: "dashed",
+		label: "With label",
 	},
 };

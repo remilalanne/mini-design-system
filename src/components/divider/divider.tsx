@@ -1,23 +1,22 @@
-import classnames from 'classnames';
-import type { ReactNode } from 'react';
-import { Typography } from '../typography/typography';
-import classes from './divider.module.scss';
+import classnames from "classnames";
+import { Typography } from "../typography/typography";
+import classes from "./divider.module.scss";
 
 export type DividerProps = {
-	orientation?: 'horizontal' | 'vertical';
-	label?: ReactNode;
-	align?: 'start' | 'center' | 'end';
-	variant?: 'solid' | 'dashed';
+	orientation?: "horizontal" | "vertical";
+	label?: string;
+	align?: "start" | "center" | "end";
+	variant?: "solid" | "dashed";
 	length?: string;
 	dataTestId?: string;
 	className?: string;
 };
 
 export function Divider({
-	orientation = 'horizontal',
+	orientation = "horizontal",
 	label,
-	align = 'center',
-	variant = 'solid',
+	align = "center",
+	variant = "solid",
 	length,
 	dataTestId,
 	className,
@@ -34,8 +33,8 @@ export function Divider({
 				classes[`divider--align-${align}`]
 			)}
 			style={
-				orientation === 'vertical'
-					? { height: length ?? '100%' }
+				orientation === "vertical"
+					? { height: length ?? "100%" }
 					: undefined
 			}
 			data-testid={dataTestId}
