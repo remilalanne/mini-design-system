@@ -79,19 +79,19 @@ cd mini-design-system
 ### **Install dependencies**
 
 ```bash
-npm install
+pnpm install
 ```
 
 ### **Run Storybook**
 
 ```bash
-npm run storybook
+pnpm run storybook
 ```
 
 ### **Run testss**
 
 ```bash
-npm run test
+pnpm run test
 ```
 
 ---
