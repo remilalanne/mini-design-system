@@ -73,6 +73,7 @@ export function Accordion({
 						>
 							<button
 								type="button"
+								id={headingId}
 								className={classnames(
 									classes.accordion__trigger,
 									isOpen &&
@@ -92,6 +93,7 @@ export function Accordion({
 							id={panelId}
 							role="region"
 							aria-labelledby={headingId}
+							hidden={!isOpen}
 							className={classnames(
 								classes.accordion__panel,
 								isOpen && classes['accordion__panel--open']

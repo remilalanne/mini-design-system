@@ -1,4 +1,5 @@
 import classnames from "classnames";
+import { useId } from "react";
 import { Colors } from "../../types/colors";
 import { Typography } from "../typography/typography";
 import classes from "./progressBar.module.scss";
@@ -9,6 +10,7 @@ export type ProgressProps = {
 	max?: number;
 	className?: string;
 	dataTestId?: string;
+	ariaLabel?: string;
 };
 
 export type ProgressBarProps = ProgressProps & {
@@ -24,7 +26,9 @@ export function ProgressBar({
 	label,
 	className,
 	dataTestId,
+	ariaLabel,
 }: ProgressBarProps) {
+	const labelId = useId();
 	const normalizedValue = Math.min(Math.max(value, 0), max);
 	const percent = (normalizedValue / max) * 100;
 	const isColorFromColors = Object.values(Colors).includes(color as Colors);
@@ -32,9 +36,11 @@ export function ProgressBar({
 	return (
 		<div className={classes.progressBarWrapper} data-testid={dataTestId}>
 			{label && (
-				<Typography component="span" weight="bold">
-					{label}
-				</Typography>
+				<span id={labelId}>
+					<Typography component="span" weight="bold">
+						{label}
+					</Typography>
+				</span>
 			)}
 			<div className={classnames(classes.progressBar, className)}>
 				<div
@@ -50,11 +56,13 @@ export function ProgressBar({
 					aria-valuenow={normalizedValue}
 					aria-valuemin={0}
 					aria-valuemax={max}
+					aria-label={ariaLabel ?? (label ? undefined : "Progress")}
+					aria-labelledby={label ? labelId : undefined}
 				/>
 			</div>
 			{showValue && (
 				<Typography component="span" fontSize="sm">{`${Math.round(
-					percent
+					percent,
 				)}%`}</Typography>
 			)}
 		</div>
@@ -74,6 +82,7 @@ export function ProgressCircle({
 	strokeWidth = 6,
 	className,
 	dataTestId,
+	ariaLabel,
 }: ProgressCircleProps) {
 	const normalizedValue = Math.min(Math.max(value, 0), max);
 	const percent = (normalizedValue / max) * 100;
@@ -89,6 +98,7 @@ export function ProgressCircle({
 			aria-valuenow={normalizedValue}
 			aria-valuemin={0}
 			aria-valuemax={max}
+			aria-label={ariaLabel ?? "Progress"}
 			data-testid={dataTestId}
 		>
 			<svg width={size} height={size}>

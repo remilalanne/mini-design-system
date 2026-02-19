@@ -44,7 +44,7 @@ export function Breadcrumbs({
 									color="var(--color-text)"
 									weight="bold"
 								>
-									{item.label}
+									<span aria-current="page">{item.label}</span>
 								</Typography>
 							) : item.href ? (
 								<Typography

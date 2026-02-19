@@ -1,10 +1,10 @@
 import classnames from 'classnames';
 import type { JSX, ReactNode } from 'react';
 import type {
-	TypographyAlign,
-	TypographySize,
-	TypographyVariant,
-	TypographyWeight,
+    TypographyAlign,
+    TypographySize,
+    TypographyVariant,
+    TypographyWeight,
 } from '../../types/typography';
 import styles from './typography.module.scss';
 
@@ -46,7 +46,7 @@ export function Typography<T extends keyof JSX.IntrinsicElements = 'p'>({
 	gutterBottom = false,
 	noWrap = false,
 	variant = 'body',
-	weight,
+	weight = "normal",
 	fontSize,
 }: TypographyProps<T>) {
 	const Component = component ?? defaultElementByVariant[variant];

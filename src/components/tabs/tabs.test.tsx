@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 import { expect } from 'vitest';
 import { Tabs } from './tabs';
@@ -46,5 +46,52 @@ describe('Tabs', () => {
 
 		expect(onChange).toHaveBeenCalledWith('tab3');
 		expect(screen.getByText('Content 1')).toBeInTheDocument();
+	});
+
+	it('supports arrow key and end/home navigation in uncontrolled mode', async () => {
+		const user = userEvent.setup();
+		render(<Tabs items={items} defaultValue="tab1" />);
+
+		const tab1 = screen.getByRole('tab', { name: 'Tab 1' });
+		tab1.focus();
+
+		await user.keyboard('{ArrowRight}');
+		const tab2 = screen.getByRole('tab', { name: 'Tab 2' });
+		expect(tab2).toHaveClass(classes['tabs__tab--active']);
+		await waitFor(() => expect(tab2).toHaveFocus());
+		expect(tab2).toHaveAttribute('tabindex', '0');
+		expect(tab1).toHaveAttribute('tabindex', '-1');
+
+		await user.keyboard('{End}');
+		const tab3 = screen.getByRole('tab', { name: 'Tab 3' });
+		expect(tab3).toHaveClass(classes['tabs__tab--active']);
+		await waitFor(() => expect(tab3).toHaveFocus());
+
+		await user.keyboard('{Home}');
+		expect(tab1).toHaveClass(classes['tabs__tab--active']);
+		await waitFor(() => expect(tab1).toHaveFocus());
+	});
+
+	it('skips disabled tabs during keyboard navigation', async () => {
+		const user = userEvent.setup();
+		render(
+			<Tabs
+				items={[
+					items[0],
+					{ ...items[1], disabled: true },
+					items[2],
+				]}
+				defaultValue="tab1"
+			/>
+		);
+
+		const tab1 = screen.getByRole('tab', { name: 'Tab 1' });
+		const tab3 = screen.getByRole('tab', { name: 'Tab 3' });
+		tab1.focus();
+
+		await user.keyboard('{ArrowRight}');
+
+		expect(tab3).toHaveClass(classes['tabs__tab--active']);
+		await waitFor(() => expect(tab3).toHaveFocus());
 	});
 });
